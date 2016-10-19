@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">LADLite</string>
+
+
+
+    <!--label-->
+    <string name="prompt_username">Email Or Mobile Number</string>
+    <string name="prompt_password">Password</string>
+
+
+    <!--button-->
+    <string name="action_forgot_password">Reset Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="action_account">Account</string>
+    <string name="action_order">Order</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!--Message-->
+    <string name="error_field_required">This field is required</string>
+    <string name="error_invalid_username">Username should be valid email or mobile number</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="exception_message_generic">There was an application error</string>
+    <string name="exception_message_no_connection">There is no internet connection</string>
+    <string name="exception_message_data_not_found">Cannot retrieve data. Check your internet connection</string>
+    <string name="exception_message_invalid_credential">Invalid Credential</string>
+</resources>
