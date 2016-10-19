@@ -3,11 +3,16 @@ package com.liquoratdoor.ladlite.activity;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,19 +20,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.liquoratdoor.ladlite.AndroidApplication;
 import com.liquoratdoor.ladlite.auth.SessionManager;
 import com.liquoratdoor.ladlite.component.ApplicationComponent;
 import com.liquoratdoor.ladlite.modules.ActivityModule;
 import com.liquoratdoor.ladlite.navigation.Navigator;
+import com.liquoratdoor.ladlite.view.LoadDataView;
 
 import javax.inject.Inject;
 
 /**
  * Created by ashqures on 8/7/16.
  */
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity implements LoadDataView {
+
+    protected static final int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 100;
+    private static final int MY_PERMISSIONS_REQUEST_READ_LOCATION = 200;
 
     @Inject
     Navigator navigator;
@@ -169,5 +179,82 @@ public class BaseActivity extends AppCompatActivity {
 
     protected ActivityModule getActivityModule() {
         return new ActivityModule(this);
+    }
+
+
+
+    public boolean checkSelfPermission(String permission, int resultCode) {
+        if (ContextCompat.checkSelfPermission(context(), permission) != PackageManager.PERMISSION_GRANTED) {
+            // Should we show an explanation?
+            if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(this,
+                        new String[]{permission}, resultCode);
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_PHONE_STATE: {
+                if (grantResults.length > 0) {
+                    if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                        showToastMessage("Some Permission is Denied");
+                    }
+                }
+            }
+            break;
+            case MY_PERMISSIONS_REQUEST_READ_LOCATION:{
+                if (grantResults.length > 0) {
+                    if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                        showToastMessage("Some Permission is Denied");
+                    }
+                }
+            }
+            break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+
+
+    protected void showToastMessage(String message) {
+        Toast.makeText(context(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showRetry() {
+
+    }
+
+    @Override
+    public void hideRetry() {
+
+    }
+
+    @Override
+    public void showError(String message) {
+
+    }
+
+    @Override
+    public Context context() {
+        return getApplicationContext();
     }
 }

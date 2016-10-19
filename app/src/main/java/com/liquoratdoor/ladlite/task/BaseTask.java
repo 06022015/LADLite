@@ -62,7 +62,7 @@ public abstract class BaseTask<R,T> extends AsyncTask<R, Void, AsyncTaskResult<T
             try {
                 RestResponse restResponse = getDataFromApi(param);
                 Log.i("Rest Response",restResponse.getResponse());
-                if (null != restResponse && restResponse.getCode().equals(HttpStatus.SC_OK)) {
+                if (restResponse.getCode().equals(HttpStatus.SC_OK)) {
                     asyncTaskResult = new AsyncTaskResult<JSONObject>(transform(restResponse.getResponse()));
                 } else {
                     StatusDTO statusDTO = this.dataMapper.transformStatus(transform(restResponse.getResponse()));

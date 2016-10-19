@@ -18,6 +18,7 @@ package com.liquoratdoor.ladlite.navigation;
 import android.content.Context;
 import android.content.Intent;
 
+import com.liquoratdoor.ladlite.activity.HomeActivity;
 import com.liquoratdoor.ladlite.activity.LoginActivity;
 
 import javax.inject.Inject;
@@ -37,6 +38,13 @@ public class Navigator {
     public void navigateToLogin(Context context) {
         if (null != context) {
             Intent intentToLaunch = LoginActivity.getCallingIntent(context);
+            context.startActivity(intentToLaunch);
+        }
+    }
+
+    public void navigateToHome(Context context) {
+        if(null!=context){
+            Intent intentToLaunch = HomeActivity.getCallingIntent(context);
             context.startActivity(intentToLaunch);
         }
     }

@@ -11,7 +11,7 @@ public interface RestApi {
     /*rest api URL*/
     final static String RESPONSE_TYPE_JSON = "application/json";
 
-    final static String BASE_URL = "http://http://104.155.202.8/hangover/services";
+    final static String BASE_URL = "http://104.155.202.8/hangover/services";
     //final static String BASE_URL = "http://10.0.2.2:8080/hangover/services";
 
     final static String USER_BASE_URL = BASE_URL+ "/user";

@@ -13,5 +13,4 @@ import dagger.Component;
 @Component(dependencies = ApplicationComponent.class, modules = {ActivityModule.class})
 public interface AuthComponent extends ActivityComponent{
 
-    void inject(AuthFragment authFragment);
 }

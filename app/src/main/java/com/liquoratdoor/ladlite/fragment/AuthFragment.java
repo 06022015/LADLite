@@ -90,7 +90,7 @@ public class AuthFragment extends BaseFragment implements AuthView {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getComponent(AuthComponent.class).inject(this);
+        //this.getComponent(AuthComponent.class).inject(this);
     }
 
     @Override

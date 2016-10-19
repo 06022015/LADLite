@@ -29,19 +29,16 @@ import javax.inject.Inject;
 public class AuthPresenter implements Presenter {
 
     private enum AuthTye{
-        SIGNIN, SIGNUP, USERNAME_VERIFICATION, IDENTIFY, SEND_OTP
+        SIGNIN,  IDENTIFY
     }
 
 
     AuthView view;
     DataMapper dataMapper;
     CommonTask authTask;
-    /*CommonRXTask signUpTask;
-    CommonRXTask identifyUserTask;*/
 
-    @Inject
-    public AuthPresenter(DataMapper dataMapper) {
-        this.dataMapper = dataMapper;
+    public AuthPresenter() {
+        this.dataMapper = new DataMapper();
     }
 
     public void setView(AuthView authView){
