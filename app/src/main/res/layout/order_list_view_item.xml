@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="2.5dp"
+    android:paddingBottom="2.5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="5dp"
+    android:weightSum="1">
+    <TextView
+        android:id="@+id/order_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:textSize="24sp"
+        android:text="Order # _ORDR_NUMBER"
+        android:typeface="sans"
+        android:textIsSelectable="false"
+        android:textStyle="normal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/time_remain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:textSize="18sp"
+        android:text="00:45"
+        android:typeface="sans"
+        android:textIsSelectable="false"
+        android:textStyle="normal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/order_label"/>
+
+    <TextView
+        android:id="@+id/delivery_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:textSize="18sp"
+        android:text="#1726, 4th B Cross, 9th Main"
+        android:typeface="sans"
+        android:textIsSelectable="false"
+        android:textStyle="normal"
+        android:layout_below="@+id/order_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/order_brief"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:textSize="12sp"
+        android:padding="5dp"
+        android:gravity="end"
+        android:text="CNT _CNT | Qty _QNTY"
+        android:typeface="sans"
+        android:textIsSelectable="false"
+        android:textStyle="normal"
+        android:layout_below="@+id/order_label"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

@@ -13,7 +13,6 @@ import org.json.JSONObject;
 public class AsyncTaskHandler {
 
 
-
     public static CommonTask getSignInTask(DefaultSubscriber<JSONObject> subscriber){
         CommonTask loginTask = new CommonTask(subscriber);
         loginTask.setURL(RestApi.LOGIN_URL);
@@ -27,5 +26,20 @@ public class AsyncTaskHandler {
         identifyTask.setURL(RestApi.IDENTIFY_USER_URL);
         identifyTask.setMethod(Presenter.Method.POST);
         return identifyTask;
+    }
+
+    public static  CommonTask getOrderTask(DefaultSubscriber<JSONObject> subscriber){
+        CommonTask orderTask = new CommonTask(subscriber);
+        orderTask.setURL(RestApi.STORE_OPEN_ORDER);
+        return orderTask;
+    }
+
+
+    public static  CommonTask getOrderDetailTask(DefaultSubscriber<JSONObject> subscriber, Long orderId){
+        String url  = RestApi.STORE_ORDER_DETAIL;
+        url = url.replaceFirst("PATH_PARAM", orderId+"");
+        CommonTask orderTask = new CommonTask(subscriber);
+        orderTask.setURL(url);
+        return orderTask;
     }
 }

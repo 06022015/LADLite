@@ -97,7 +97,7 @@ public class LoginActivity extends BaseActivity implements LoaderManager.LoaderC
                 container.addView(inflatedLayout);
             }
             ButterKnife.bind(this);
-            this.presenter = new AuthPresenter();
+
             if (savedInstanceState == null)
                 setUpView();
         }else{
@@ -108,6 +108,7 @@ public class LoginActivity extends BaseActivity implements LoaderManager.LoaderC
     @Override
     public void onPostCreate( Bundle savedInstanceState){
         super.onPostCreate(savedInstanceState);
+        this.presenter = new AuthPresenter();
         this.presenter.setView(this);
         checkSelfPermission(Manifest.permission.READ_PHONE_STATE, MY_PERMISSIONS_REQUEST_READ_PHONE_STATE);
     }

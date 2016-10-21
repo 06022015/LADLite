@@ -20,6 +20,7 @@ import android.content.Intent;
 
 import com.liquoratdoor.ladlite.activity.HomeActivity;
 import com.liquoratdoor.ladlite.activity.LoginActivity;
+import com.liquoratdoor.ladlite.activity.OrderDetailActivity;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -45,6 +46,14 @@ public class Navigator {
     public void navigateToHome(Context context) {
         if(null!=context){
             Intent intentToLaunch = HomeActivity.getCallingIntent(context);
+            context.startActivity(intentToLaunch);
+        }
+    }
+
+
+    public void navigateToOrderDetail(Context context, Long orderId) {
+        if(null!=context){
+            Intent intentToLaunch = OrderDetailActivity.getCallingIntent(context, orderId);
             context.startActivity(intentToLaunch);
         }
     }

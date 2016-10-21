@@ -5,6 +5,7 @@ import com.liquoratdoor.ladlite.exception.RepositoryErrorBundle;
 import com.liquoratdoor.ladlite.interector.DefaultSubscriber;
 import com.liquoratdoor.ladlite.presenter.Presenter;
 import com.liquoratdoor.ladlite.service.ApiConnection;
+import com.liquoratdoor.ladlite.service.RestApi;
 import com.liquoratdoor.ladlite.service.RestResponse;
 
 import org.json.JSONObject;
@@ -67,6 +68,9 @@ public class CommonTask extends BaseTask<Map<String,String>, JSONObject> {
     public RestResponse getDataFromApi(Map<String,String> paramMap)throws RepositoryErrorBundle {
         System.out.println("Rest Url:- "+ this.url);
         ApiConnection apiConnection = new ApiConnection(this.url);
+        if(null != sessionManager.getAuthToken()){
+            apiConnection.addHeader(RestApi.HEADER_PARAM_AUTHORIZATION, sessionManager.getAuthToken());
+        }
         if(null!=paramMap && paramMap.size()>0)
             apiConnection.addParams(paramMap);
         return apiConnection.execute(getConnectionMethod(this.method));

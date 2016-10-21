@@ -51,25 +51,6 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getApplicationComponent().inject(this);
-
-        /*if(sessionManager.isLoggedIn()){
-            if(!sessionManager.checkPermission(SessionManager.KEY_MOBILE_VERIFIED)){
-                CustomDialog.MblVrfctnDialogListener listener = new CustomDialog.MblVrfctnDialogListener() {
-                    @Override
-                    public boolean resendOTP() {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean verifyMobile(String otp) {
-                        dialog.cancel();
-                        return false;
-                    }
-                };
-                this.dialog = CustomDialog.mobileVerificationDialog(this, listener);
-                this.dialog.show();
-            }
-        }*/
     }
 
     @Override
@@ -80,7 +61,7 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
 
 
 
-    /*protected void setupToolbar(boolean onBackEnable) {
+    protected void setupToolbar(boolean onBackEnable) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
@@ -97,11 +78,11 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
                     });
                 }
             }else{
-                ab.setHomeAsUpIndicator(R.mipmap.ic_menu);
-                ab.setDisplayHomeAsUpEnabled(true);
+               // ab.setHomeAsUpIndicator(R.mipmap.ic_menu);
+                ab.setDisplayHomeAsUpEnabled(false);
             }
         }
-    }*/
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
