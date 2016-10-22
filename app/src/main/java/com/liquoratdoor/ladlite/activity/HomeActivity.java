@@ -62,8 +62,6 @@ public class HomeActivity extends BaseActivity implements SwipeRefreshLayout.OnR
         }
         ButterKnife.bind(this);
         this.presenter = new OrderPresenter();
-        if (savedInstanceState == null)
-            setUpView();
     }
 
     @Override
@@ -78,12 +76,11 @@ public class HomeActivity extends BaseActivity implements SwipeRefreshLayout.OnR
                                     }
                                 }
         );
-        /*if(null == savedInstanceState)
-            loadOrder();*/
     }
 
 
     private void loadOrder(){
+        setUpView();
         this.swipeRefreshLayout.setRefreshing(true);
         this.presenter.initialize();
     }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.liquoratdoor.ladlite.activity.R;
 import com.liquoratdoor.ladlite.dto.OrderDTO;
 import com.liquoratdoor.ladlite.dto.OrderItemDTO;
+import com.liquoratdoor.ladlite.util.CommonUtil;
 
 import java.util.Collection;
 import java.util.List;
@@ -78,12 +79,9 @@ public class OrderAdapter extends ArrayAdapter<OrderDTO> {
         holder.deliveryAddress.setText(orderDTO.getAddressDTO().toString());
         String brief = holder.orderBrief.getText().toString();
         brief = brief.replace("_CNT",orderDTO.getOrderItemDTOs().size()+"");
-        int qnty = 0;
-        for(OrderItemDTO orderItemDTO : orderDTO.getOrderItemDTOs()){
-            qnty = qnty+orderItemDTO.getQuantity();
-        }
-        brief = brief.replace("_QNTY",qnty+"");
+        brief = brief.replace("_QNTY",orderDTO.getTotalQuantity()+"");
         holder.orderBrief.setText(brief);
+        CommonUtil.handleDeliveryTime(holder.timeRemain, orderDTO.getOrderPlacedTime());
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -11,8 +11,8 @@ public interface RestApi {
     /*rest api URL*/
     final static String RESPONSE_TYPE_JSON = "application/json";
 
-    //final static String BASE_URL = "http://104.155.202.8/hangover/services";
-    final static String BASE_URL = "http://10.0.2.2:8080/hangover/services";
+    final static String BASE_URL = "http://104.155.202.8/hangover/services";
+    //final static String BASE_URL = "http://10.0.2.2:8080/hangover/services";
 
     final static String USER_BASE_URL = BASE_URL+ "/user";
     final static String USER_ADDRESS_URL = USER_BASE_URL+ "/address";
@@ -29,6 +29,8 @@ public interface RestApi {
     final static String STORE_ARCHIVE_ORDER = STORE_BASE_URL+"/order/archive";
     final static String STORE_ORDER_DETAIL = STORE_BASE_URL+"/order/PATH_PARAM";
 
+    final static String STORE_ORDER_PROCESS = STORE_BASE_URL+"/order/process";
+
 
     /*rest header param*/
     final static String HEADER_PARAM_AUTHORIZATION = "Authorization";
@@ -40,5 +42,7 @@ public interface RestApi {
     final static String USERNAME = "username";
     final static String PASSWORD = "password";
     final static String DEVICE_ID = "deviceId";
+    final static String ORDER_SATE = "state";
+    final static String ORDER_ID = "orderId";
 
 }

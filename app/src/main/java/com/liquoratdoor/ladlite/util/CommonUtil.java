@@ -5,9 +5,14 @@ import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.widget.TextView;
+
+import com.liquoratdoor.ladlite.listener.PhoneCallListener;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -28,6 +33,16 @@ public class CommonUtil {
         deviceInfoMap.put("simSerialNumber", telephonyManager.getSimSerialNumber());
         return deviceInfoMap;
     }
+
+
+
+    public static void attachPhoneListener(Context context){
+        PhoneCallListener phoneListener = new PhoneCallListener(context);
+        TelephonyManager telephonyManager = (TelephonyManager) context
+                .getSystemService(Context.TELEPHONY_SERVICE);
+        telephonyManager.listen(phoneListener, PhoneStateListener.LISTEN_CALL_STATE);
+    }
+
 
     public static int dpToPx(int dp){
         return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
@@ -55,4 +70,11 @@ public class CommonUtil {
         }
         return address;
     }
+
+    public static void handleDeliveryTime(TextView textView,Date orderPLaceTime){
+        Date now = new Date();
+        DeliveryTimeCounter  counter = new DeliveryTimeCounter(textView, now.getTime()-orderPLaceTime.getTime());
+        counter.start();
+    }
+
 }

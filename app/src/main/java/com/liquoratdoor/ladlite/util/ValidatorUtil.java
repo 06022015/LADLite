@@ -47,4 +47,8 @@ public class ValidatorUtil {
     public static boolean isValidZipCode(String zipCode){
         return zipCode.matches(ZIP_CODE_PATTERN);
     }
+
+    public static boolean isNotEmpty(String text){
+        return null!= text && !"".equals(text);
+    }
 }

@@ -37,7 +37,8 @@ import javax.inject.Inject;
 public class BaseActivity extends AppCompatActivity implements LoadDataView {
 
     protected static final int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 100;
-    private static final int MY_PERMISSIONS_REQUEST_READ_LOCATION = 200;
+    protected static final int MY_PERMISSIONS_REQUEST_READ_LOCATION = 200;
+    protected static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 300;
 
     @Inject
     Navigator navigator;
@@ -192,6 +193,14 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
             }
             break;
             case MY_PERMISSIONS_REQUEST_READ_LOCATION:{
+                if (grantResults.length > 0) {
+                    if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                        showToastMessage("Some Permission is Denied");
+                    }
+                }
+            }
+            break;
+            case MY_PERMISSIONS_REQUEST_CALL_PHONE:{
                 if (grantResults.length > 0) {
                     if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                         showToastMessage("Some Permission is Denied");

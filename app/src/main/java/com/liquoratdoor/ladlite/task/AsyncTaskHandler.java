@@ -42,4 +42,13 @@ public class AsyncTaskHandler {
         orderTask.setURL(url);
         return orderTask;
     }
+
+
+    public static  CommonTask getOrderProcessTask(DefaultSubscriber<JSONObject> subscriber){
+        String url  = RestApi.STORE_ORDER_PROCESS;
+        CommonTask orderTask = new CommonTask(subscriber);
+        orderTask.setMethod(Presenter.Method.POST);
+        orderTask.setURL(url);
+        return orderTask;
+    }
 }

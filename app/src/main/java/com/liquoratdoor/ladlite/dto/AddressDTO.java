@@ -97,6 +97,12 @@ public class AddressDTO extends BaseDTO{
         this.mobile = mobile;
     }
 
+
+    public String getCompleteAddress(){
+        return "Address: "+this.address+", "+this.street+", landmark: "+this.landMark+", "+
+                this.country+", "+this.state+", "+this.country+" - "+this.zipcode;
+    }
+
     @Override
     public String toString() {
         return "Address: "+this.address+", "+this.street+", landmark: "+this.landMark+", ";

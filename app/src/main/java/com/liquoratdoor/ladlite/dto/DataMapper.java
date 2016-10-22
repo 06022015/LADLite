@@ -1,11 +1,18 @@
 package com.liquoratdoor.ladlite.dto;
 
+import android.text.TextUtils;
+
+import com.liquoratdoor.ladlite.util.DateUtils;
+import com.liquoratdoor.ladlite.util.ValidatorUtil;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.zip.DataFormatException;
 
 import javax.inject.Inject;
 
@@ -59,6 +66,14 @@ public class DataMapper {
         orderDTO.setOrderNumber(json.getString("orderNumber"));
         orderDTO.setState(OrderState.valueOf(json.getString("state")));
         orderDTO.setAddressDTO(transformAddress(json.getJSONObject("address")));
+        JSONObject customer = json.getJSONObject("customer");
+        orderDTO.setCustomerName(customer.getString("name"));
+        if(ValidatorUtil.isNotEmpty(orderDTO.getAddressDTO().getMobile()))
+            orderDTO.setCustomerMobile(orderDTO.getAddressDTO().getMobile());
+        else
+            orderDTO.setCustomerMobile(customer.getString("mobile"));
+        if(json.has("order_placed_at") && !json.isNull("order_placed_at"))
+            orderDTO.setOrderPlacedTime(new Date(json.getLong("order_placed_at")));
         JSONArray items = json.getJSONArray("orderItem");
         for(int i=0;i<items.length();i++){
             orderDTO.addOrderItem(transferOrderItem(items.getJSONObject(i)));
@@ -79,7 +94,8 @@ public class DataMapper {
         //addressDTO.setLandMark(json.getString("landmark"));
         addressDTO.setLatitude(json.getString("latitude"));
         addressDTO.setLongitude(json.getString("longitude"));
-        addressDTO.setMobile(json.getString("mobileNumber"));
+        if(json.has(json.getString("mobileNumber")) && ValidatorUtil.isNotEmpty(json.getString("mobileNumber")))
+            addressDTO.setMobile(json.getString("mobileNumber"));
         return addressDTO;
     }
 
@@ -89,13 +105,15 @@ public class DataMapper {
         orderItemDTO.setId(json.getLong("id"));
         orderItemDTO.setName(item.getString("name"));
         if(json.has("price") && null != json.get("price"))
-           // orderItemDTO.setPrice(json.getDouble("price"));
+            //orderItemDTO.setPrice(json.getDouble("299.50"));
+            orderItemDTO.setPrice(299.80);
         orderItemDTO.setSize(json.getString("itemSize"));
         orderItemDTO.setQuantity(json.getInt("quantity"));
         if(item.has("imageURL") && item.getJSONArray("imageURL").length()>0){
             orderItemDTO.setImageURL(item.getJSONArray("imageURL").getString(0));
         }
         orderItemDTO.setDescription(item.getString("description"));
+        orderItemDTO.setBrandName(item.getJSONObject("brand").getString("name"));
         return orderItemDTO;
     }
 

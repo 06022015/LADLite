@@ -11,6 +11,7 @@ public class OrderItemDTO extends BaseDTO {
     private Double price;
     private int quantity;
     private String imageURL;
+    private String brandName;
 
     public String getName() {
         return name;
@@ -58,5 +59,13 @@ public class OrderItemDTO extends BaseDTO {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
     }
 }

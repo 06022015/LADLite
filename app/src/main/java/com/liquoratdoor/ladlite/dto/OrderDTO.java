@@ -11,10 +11,12 @@ public class OrderDTO extends BaseDTO {
 
 
     private String orderNumber;
-    private Date orderPlacedTime;
+    private Date orderPlacedTime = new Date();
     private AddressDTO addressDTO;
     private List<OrderItemDTO> orderItemDTOs;
     private OrderState state;
+    private String customerName;
+    private String customerMobile;
 
 
     public String getOrderNumber() {
@@ -61,5 +63,29 @@ public class OrderDTO extends BaseDTO {
 
     public void setState(OrderState state) {
         this.state = state;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getCustomerMobile() {
+        return customerMobile;
+    }
+
+    public void setCustomerMobile(String customerMobile) {
+        this.customerMobile = customerMobile;
+    }
+
+    public int getTotalQuantity(){
+        int quantity = 0;
+        for(OrderItemDTO orderItemDTO : getOrderItemDTOs()){
+            quantity = quantity+orderItemDTO.getQuantity();
+        }
+        return quantity;
     }
 }
