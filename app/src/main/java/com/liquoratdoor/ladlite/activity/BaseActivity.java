@@ -25,9 +25,19 @@ import android.widget.Toast;
 import com.liquoratdoor.ladlite.AndroidApplication;
 import com.liquoratdoor.ladlite.auth.SessionManager;
 import com.liquoratdoor.ladlite.component.ApplicationComponent;
+import com.liquoratdoor.ladlite.interector.DefaultSubscriber;
 import com.liquoratdoor.ladlite.modules.ActivityModule;
 import com.liquoratdoor.ladlite.navigation.Navigator;
+import com.liquoratdoor.ladlite.service.RestApi;
+import com.liquoratdoor.ladlite.task.AsyncTaskHandler;
+import com.liquoratdoor.ladlite.task.CommonTask;
+import com.liquoratdoor.ladlite.util.CommonUtil;
 import com.liquoratdoor.ladlite.view.LoadDataView;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -45,6 +55,8 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
 
     @Inject
     SessionManager sessionManager;
+
+    private CommonTask mTask;
 
     protected Dialog dialog;
 
@@ -129,8 +141,9 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
             case R.id.action_settings : status = true;break;
             case R.id.action_sign_in : navigator.navigateToLogin(getApplicationContext());break;
             case R.id.action_sign_out :
-                sessionManager.logoutUser();
-                navigator.navigateToLogin(getApplicationContext());break;
+                signOut();
+                navigator.navigateToLogin(getApplicationContext());
+                break;
             default:status=true;
         }
         return status?status:super.onOptionsItemSelected(item);
@@ -147,6 +160,20 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
                 }
             });
     }*/
+
+    protected void signOut(){
+        this.sessionManager.logoutUser();
+        this.mTask = AsyncTaskHandler.getSignOutTask(new DefaultSubscriber<JSONObject>() {
+            @Override
+            public Context getContext() {
+                return BaseActivity.this.context();
+            }
+        });
+        Map<String,String> param = new HashMap<>();
+        param.put(RestApi.DEVICE_ID, CommonUtil.getDeviceInfo(this).get("deviceId"));
+        this.mTask.execute(param);
+    }
+
 
     protected void addFragment(int containerViewId, Fragment fragment) {
         FragmentTransaction fragmentTransaction = this.getFragmentManager().beginTransaction();

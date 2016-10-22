@@ -28,6 +28,13 @@ public class AsyncTaskHandler {
         return identifyTask;
     }
 
+
+    public static CommonTask getSignOutTask(DefaultSubscriber<JSONObject> subscriber){
+        CommonTask signOutTask = new CommonTask(subscriber);
+        signOutTask.setURL(RestApi.LOGOUT_URL);
+        return signOutTask;
+    }
+
     public static  CommonTask getOrderTask(DefaultSubscriber<JSONObject> subscriber){
         CommonTask orderTask = new CommonTask(subscriber);
         orderTask.setURL(RestApi.STORE_OPEN_ORDER);
