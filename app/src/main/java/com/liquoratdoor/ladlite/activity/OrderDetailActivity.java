@@ -1,15 +1,12 @@
 package com.liquoratdoor.ladlite.activity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.telephony.PhoneStateListener;
-import android.telephony.TelephonyManager;
-import android.transition.Visibility;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
@@ -20,12 +17,9 @@ import com.liquoratdoor.ladlite.dto.OrderDTO;
 import com.liquoratdoor.ladlite.dto.OrderItemDTO;
 import com.liquoratdoor.ladlite.dto.OrderState;
 import com.liquoratdoor.ladlite.dto.StatusDTO;
-import com.liquoratdoor.ladlite.listener.PhoneCallListener;
 import com.liquoratdoor.ladlite.presenter.OrderDetailPresenter;
 import com.liquoratdoor.ladlite.service.RestApi;
 import com.liquoratdoor.ladlite.util.CommonUtil;
-import com.liquoratdoor.ladlite.util.DeliveryTimeCounter;
-import com.liquoratdoor.ladlite.util.OrderItemLayout;
 import com.liquoratdoor.ladlite.view.CommonView;
 
 import java.util.HashMap;
@@ -170,9 +164,7 @@ public class OrderDetailActivity extends BaseActivity implements CommonView<Orde
             }
         });
         for(OrderItemDTO orderItemDTO : orderDTO.getOrderItemDTOs()){
-            OrderItemLayout orderItemLayout = new OrderItemLayout(this, orderItemDTO);
-            orderItemLayout.init();
-            this.orderItemsLayout.addView(orderItemLayout);
+            this.orderItemsLayout.addView(getOrderItemRow(orderItemDTO));
         }
         setUpAction();
     }
@@ -230,4 +222,24 @@ public class OrderDetailActivity extends BaseActivity implements CommonView<Orde
         param.put(RestApi.ORDER_SATE, state.name());
         this.presenter.processOrderState(param);
     }
+
+    public View getOrderItemRow(OrderItemDTO orderItemDTO){
+        LayoutInflater inflater = (LayoutInflater)
+                this.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        View row = inflater.inflate(R.layout.order_item_view, this.orderItemsLayout, false);
+        TextView itemName = (TextView) row.findViewById(R.id.item_name);
+        itemName.setText(orderItemDTO.getName());
+        TextView brandName = (TextView) row.findViewById(R.id.brand_name);
+        brandName.setText(orderItemDTO.getBrandName());
+        TextView itemSize = (TextView) row.findViewById(R.id.item_size);
+        itemSize.setText(orderItemDTO.getSize());
+        TextView unitPrice = (TextView) row.findViewById(R.id.item_unit_price);
+        unitPrice.setText(String.format("%.2f", orderItemDTO.getPrice()));
+        TextView quantity = (TextView) row.findViewById(R.id.item_quantity);
+        quantity.setText(orderItemDTO.getQuantity()+"");
+        TextView itemAmount = (TextView) row.findViewById(R.id.item_amount);
+        itemAmount.setText(String.format("%.2f", orderItemDTO.getQuantity()*orderItemDTO.getPrice()));
+        return row;
+    }
+
 }

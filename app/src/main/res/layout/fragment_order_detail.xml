@@ -1,610 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-    <LinearLayout
-        android:id="@+id/order_detail_block"
+    android:layout_height="match_parent">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/order_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:orientation="horizontal"
-            android:padding="10dp">
-            <TextView
-                android:id="@+id/order_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Order # _ORDRNUM"
-                android:foregroundGravity="center_vertical"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true" />
-            <TextView
-                android:id="@+id/delivery_time_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:foregroundGravity="center_vertical"
-                android:text="00:45"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/customer_detail_block"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:orientation="horizontal"
-            android:padding="10dp">
-            <TextView
-                android:id="@+id/customer_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name: _NAME"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-            <TextView
-                android:id="@+id/customer_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mob: _MOB"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/delivery_address_block"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:orientation="horizontal"
-            android:padding="10dp">
-            <TextView
-                android:id="@+id/delivery_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="#1725, 2nd Floor, 4th B Cross, 9th Main, New Thippasandra, Landmark Frankrose Pharma, Bangalore, India-560075"
-                android:foregroundGravity="center_vertical"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_toLeftOf="@+id/view_on_map"
-                android:layout_toStartOf="@+id/view_on_map" />
-            <Button
-                android:id="@+id/view_on_map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:foregroundGravity="center_vertical"
-                android:text="Map"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/order_brief"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:orientation="horizontal"
-            android:padding="10dp">
-            <TextView
-                android:id="@+id/total_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total item _ITEM"
-                android:foregroundGravity="center_vertical"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"/>
-            <TextView
-                android:id="@+id/total_quantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:foregroundGravity="center_vertical"
-                android:text="Ttl Qnty _QNTY"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <LinearLayout
-            android:id="@+id/order_items"
-            android:orientation="vertical"
+            android:id="@+id/order_detail_block"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <RelativeLayout
+                android:id="@+id/order_title"
                 android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center_vertical"
-                style="@style/TitleBar">
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:padding="10dp">
                 <TextView
-                    android:id="@+id/item_name_title"
+                    android:id="@+id/order_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/CustomTitleTextView"
-                    android:text="Item Name"
-                    android:textIsSelectable="false"
+                    android:text="Order # _ORDRNUM"
+                    android:foregroundGravity="center_vertical"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true" />
+                <TextView
+                    android:id="@+id/delivery_time_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foregroundGravity="center_vertical"
+                    android:text="00:45"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/customer_detail_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/customer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name: _NAME"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true" />
-
                 <TextView
-                    android:id="@+id/item_size_title"
+                    android:id="@+id/customer_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/CustomTitleTextView"
-                    android:text="Size"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/item_unit_price_title" />
-
-                <TextView
-                    android:id="@+id/item_unit_price_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomTitleTextView"
-                    android:text="Unt Prc"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/item_quantity_title" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomTitleTextView"
-                    android:text="Qty"
-                    android:id="@+id/item_quantity_title"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/item_price_title"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomTitleTextView"
-                    android:text="Total"
-                    android:id="@+id/item_price_title"
+                    android:text="Mob: _MOB"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/delivery_address_block"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingTop="2.5dp"
-                android:paddingBottom="2.5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp">
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:padding="10dp">
                 <TextView
-                    android:id="@+id/item_name"
+                    android:id="@+id/delivery_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vodka Romano Ashif"
-                    android:padding="5dp"
+                    android:foregroundGravity="center_vertical"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="300ML"
-                    android:padding="5dp"
-                    android:id="@+id/item_size"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/item_unit_price" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="255.99"
-                    android:padding="5dp"
-                    android:id="@+id/item_unit_price"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/item_quantity" />
-
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10"
-                    android:padding="5dp"
-                    android:id="@+id/item_quantity"
-                    android:layout_alignTop="@+id/item_name" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="200.30"
-                    android:padding="5dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true" />
-
-                <TextView
-                    android:layout_width="171dp"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="Irish Alcohol"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <!--<TextView
+                    android:layout_toLeftOf="@+id/view_on_map"
+                    android:layout_toStartOf="@+id/view_on_map" />
+                <Button
+                    android:id="@+id/view_on_map"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200.30"
-                    android:padding="5dp"
-                    android:id="@+id/item_price"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true" />
-
-                <TextView
-                    android:id="@+id/brand_name"
-                    android:layout_width="171dp"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="Irish Alcohol"
+                    android:foregroundGravity="center_vertical"
+                    android:text="Map"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />-->
-
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
             </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/order_brief"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/total_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total item _ITEM"
+                    android:foregroundGravity="center_vertical"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"/>
+                <TextView
+                    android:id="@+id/total_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foregroundGravity="center_vertical"
+                    android:text="Ttl Qnty _QNTY"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/order_items"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:gravity="center_vertical"
+                    style="@style/TitleBar">
+                    <TextView
+                        android:id="@+id/item_name_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomTitleTextView"
+                        android:text="Item Name"
+                        android:textIsSelectable="false"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                    <TextView
+                        android:id="@+id/item_size_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomTitleTextView"
+                        android:text="Size"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/item_unit_price_title" />
+                    <TextView
+                        android:id="@+id/item_unit_price_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomTitleTextView"
+                        android:text="Unt Prc"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/item_quantity_title" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomTitleTextView"
+                        android:text="Qty"
+                        android:id="@+id/item_quantity_title"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/item_price_title"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomTitleTextView"
+                        android:text="Total"
+                        android:id="@+id/item_price_title"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-        <!--<RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            style="@style/TitleBar"
-            android:weightSum="1">
-            <TextView
-                android:id="@+id/item_name_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/CustomTitleTextView"
-                android:text="Item Name"
-                android:padding="5dp"
-                android:textIsSelectable="false"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/CustomTitleTextView"
-                android:text="Size"
-                android:padding="5dp"
-                android:id="@+id/item_size_title"
-                android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/item_quantity_title" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/CustomTitleTextView"
-                android:text="Qnty"
-                android:padding="5dp"
-                android:id="@+id/item_quantity_title"
-                android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/item_price_title"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/CustomTitleTextView"
-                android:text="Price"
-                android:padding="5dp"
-                android:id="@+id/item_price_title"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>-->
-
-
-
-        <!--<RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal"
-            android:paddingTop="2.5dp"
-            android:paddingBottom="2.5dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:weightSum="1">
-            <TextView
-                android:id="@+id/item_name_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#040404"
-                android:textSize="18sp"
-                android:text="Vodka Romano"
-                android:padding="5dp"
-                android:typeface="sans"
-                android:textIsSelectable="false"
-                android:textStyle="normal"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="300ML"
-                android:padding="5dp"
-                android:id="@+id/item_size_1"
-                android:layout_alignTop="@+id/item_name_1"
-                android:layout_toLeftOf="@+id/item_quantity_1"
-                android:layout_toStartOf="@+id/item_quantity_1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"
-                android:padding="5dp"
-                android:id="@+id/item_quantity_1"
-                android:layout_alignTop="@+id/item_name_1"
-                android:layout_toLeftOf="@+id/item_price__1" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="200.30"
-                android:padding="5dp"
-                android:id="@+id/item_price__1"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-            <TextView
-                android:id="@+id/brand_name_1"
-                android:layout_width="171dp"
-                android:layout_height="wrap_content"
-                android:textColor="#040404"
-                android:textSize="12sp"
-                android:padding="5dp"
-                android:text="Irish Alcohol"
-                android:typeface="sans"
-                android:textIsSelectable="false"
-                android:textStyle="normal"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal"
-            android:paddingTop="2.5dp"
-            android:paddingBottom="2.5dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:weightSum="1">
-            <TextView
-                android:id="@+id/item_name_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#040404"
-                android:textSize="18sp"
-                android:text="Vodka Romano"
-                android:padding="5dp"
-                android:typeface="sans"
-                android:textIsSelectable="false"
-                android:textStyle="normal"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="300ML"
-                android:padding="5dp"
-                android:id="@+id/item_size_2"
-                android:layout_alignTop="@+id/item_name_2"
-                android:layout_toLeftOf="@+id/item_quantity_2"
-                android:layout_toStartOf="@+id/item_quantity_2" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"
-                android:padding="5dp"
-                android:id="@+id/item_quantity_2"
-                android:layout_alignTop="@+id/item_name_2"
-                android:layout_toLeftOf="@+id/item_price__2" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="200.30"
-                android:padding="5dp"
-                android:id="@+id/item_price__2"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-            <TextView
-                android:id="@+id/brand_name_2"
-                android:layout_width="171dp"
-                android:layout_height="wrap_content"
-                android:textColor="#040404"
-                android:textSize="12sp"
-                android:padding="5dp"
-                android:text="Irish Alcohol"
-                android:typeface="sans"
-                android:textIsSelectable="false"
-                android:textStyle="normal"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal"
-            android:paddingTop="2.5dp"
-            android:paddingBottom="2.5dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:weightSum="1">
-            <TextView
-                android:id="@+id/item_name_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#040404"
-                android:textSize="18sp"
-                android:text="Vodka Romano"
-                android:padding="5dp"
-                android:typeface="sans"
-                android:textIsSelectable="false"
-                android:textStyle="normal"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="300ML"
-                android:padding="5dp"
-                android:id="@+id/item_size_3"
-                android:layout_alignTop="@+id/item_name_3"
-                android:layout_toLeftOf="@+id/item_quantity_3"
-                android:layout_toStartOf="@+id/item_quantity_3" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"
-                android:padding="5dp"
-                android:id="@+id/item_quantity_3"
-                android:layout_alignTop="@+id/item_name_3"
-                android:layout_toLeftOf="@+id/item_price__3" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="200.30"
-                android:padding="5dp"
-                android:id="@+id/item_price__3"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-            <TextView
-                android:id="@+id/brand_name_3"
-                android:layout_width="171dp"
-                android:layout_height="wrap_content"
-                android:textColor="#040404"
-                android:textSize="12sp"
-                android:padding="5dp"
-                android:text="Irish Alcohol"
-                android:typeface="sans"
-                android:textIsSelectable="false"
-                android:textStyle="normal"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-        </RelativeLayout>-->
-        <LinearLayout
-            android:id="@+id/order_action"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal"
-            android:paddingTop="2.5dp"
-            android:paddingBottom="2.5dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:weightSum="1">
-            <Button
-                android:id="@+id/button_order_accept"
-                android:layout_width="0dp"
-                android:layout_weight="1.00"
-                android:layout_height="wrap_content"
-                style="@style/CustomButton"
-                android:text="Accept"
-                android:padding="5dp"/>
-            <Button
-                android:id="@+id/button_order_reject"
-                android:layout_width="187dp"
-                android:layout_height="wrap_content"
-                style="@style/CustomButton"
-                android:text="Reject"
-                android:padding="5dp"
-                android:layout_marginLeft="5dp"/>
-
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-    <!--<ScrollView
-        android:id="@+id/item_view"
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/order_action"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:focusableInTouchMode="false">
-
-        <RelativeLayout
-            android:id="@+id/order_title"
-            android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:paddingTop="2.5dp"
+        android:paddingBottom="2.5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:weightSum="1"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/button_order_accept"
+            android:layout_width="0dp"
+            android:layout_weight="1.00"
             android:layout_height="wrap_content"
-            android:background="#fff"
-            android:orientation="horizontal"
-            android:padding="10dp">
-            <TextView
-                android:id="@+id/cart_total_amount_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="10dp"
-                android:foregroundGravity="center_vertical"
-                android:text="Total Amount" />
-            <TextView
-                android:id="@+id/cart_total_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="10dp"
-                android:foregroundGravity="center_vertical"
-                android:text="0.00" />
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/order_number"
-            android:layout_width="171dp"
+            style="@style/CustomButton"
+            android:padding="5dp"/>
+        <Button
+            android:id="@+id/button_order_reject"
+            android:layout_width="187dp"
+            android:layout_weight="0.31"
             android:layout_height="wrap_content"
-            android:textColor="#040404"
-            android:textSize="12sp"
+            style="@style/CustomButton"
             android:padding="5dp"
-            android:gravity="end"
-            android:text=""
-            android:typeface="sans"
-            android:textIsSelectable="false"
-            android:textStyle="normal"/>
+            android:layout_marginLeft="5dp" />
+    </LinearLayout>
+</RelativeLayout>
 
-
-
-    </ScrollView>-->
-</ScrollView>
