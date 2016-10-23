@@ -22,7 +22,6 @@ import com.liquoratdoor.ladlite.activity.HomeActivity;
 import com.liquoratdoor.ladlite.activity.LoginActivity;
 import com.liquoratdoor.ladlite.activity.OrderDetailActivity;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
@@ -31,7 +30,6 @@ import javax.inject.Singleton;
 @Singleton
 public class Navigator {
 
-    @Inject
     public Navigator() {
         //empty
     }

@@ -18,17 +18,11 @@ package com.liquoratdoor.ladlite;
 import android.app.Application;
 
 import com.liquoratdoor.ladlite.activity.BuildConfig;
-import com.liquoratdoor.ladlite.component.ApplicationComponent;
-import com.liquoratdoor.ladlite.component.DaggerApplicationComponent;
-import com.liquoratdoor.ladlite.modules.ApplicationModule;
-
 
 /**
  * Android Main Application
  */
 public class AndroidApplication extends Application {
-
-    private ApplicationComponent applicationComponent;
 
     @Override
     public void onCreate() {
@@ -38,13 +32,9 @@ public class AndroidApplication extends Application {
     }
 
     private void initializeInjector() {
-        this.applicationComponent = DaggerApplicationComponent.builder()
+        /*this.applicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
-                .build();
-    }
-
-    public ApplicationComponent getApplicationComponent() {
-        return this.applicationComponent;
+                .build();*/
     }
 
     private void initializeLeakDetection() {

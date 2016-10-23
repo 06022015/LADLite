@@ -20,7 +20,6 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
-import javax.inject.Inject;
 
 /**
  * Created by ashqures on 8/18/16.

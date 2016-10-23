@@ -14,19 +14,13 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 
-import com.liquoratdoor.ladlite.auth.SessionManager;
-import com.liquoratdoor.ladlite.component.HasComponent;
 import com.liquoratdoor.ladlite.util.FlipAnimationUtil;
 import com.liquoratdoor.ladlite.view.LoadDataView;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.inject.Inject;
+/*import javax.inject.Inject;*/
 
 /**
  * Base {@link Fragment} class for every fragment in this application.
@@ -37,8 +31,8 @@ public abstract class BaseFragment extends Fragment implements LoadDataView {
     private static final int MY_PERMISSIONS_REQUEST_READ_LOCATION = 200;
 
 
-    @Inject
-    SessionManager sessionManager;
+   /* @Inject
+    SessionManager sessionManager;*/
 
     protected Dialog dialog;
 
@@ -48,11 +42,6 @@ public abstract class BaseFragment extends Fragment implements LoadDataView {
         showSnackBar(view);
     }
 
-    public void onSuccessOfMobileVerification(){
-        sessionManager.updatePermission(SessionManager.KEY_MOBILE_VERIFIED, true);
-        this.dialog.cancel();
-    }
-
     /**
      * Shows a {@link Toast} message.
      *
@@ -60,14 +49,6 @@ public abstract class BaseFragment extends Fragment implements LoadDataView {
      */
     protected void showToastMessage(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    /**
-     * Gets a component for dependency injection by its type.
-     */
-    @SuppressWarnings("unchecked")
-    protected <C> C getComponent(Class<C> componentType) {
-        return componentType.cast(((HasComponent<C>) getActivity()).getComponent());
     }
 
     public boolean checkSelfPermission(String permission, int resultCode) {

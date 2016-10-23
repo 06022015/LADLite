@@ -1,8 +1,6 @@
 package com.liquoratdoor.ladlite.dto;
 
-import android.text.TextUtils;
 
-import com.liquoratdoor.ladlite.util.DateUtils;
 import com.liquoratdoor.ladlite.util.ValidatorUtil;
 
 import org.json.JSONArray;
@@ -12,9 +10,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.zip.DataFormatException;
-
-import javax.inject.Inject;
 
 /**
  * Created by ashqures on 10/19/16.

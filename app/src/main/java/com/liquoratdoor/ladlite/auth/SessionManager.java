@@ -1,7 +1,6 @@
 package com.liquoratdoor.ladlite.auth;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 
 
@@ -10,7 +9,6 @@ import com.liquoratdoor.ladlite.dto.UserDTO;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.inject.Inject;
 
 /**
  * Created by ashqures on 1/23/16.
@@ -51,7 +49,6 @@ public class SessionManager {
     public static final String KEY_TOKEN = "token";
 
     // Constructor
-    @Inject
     public SessionManager(Context context){
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);

@@ -1,6 +1,5 @@
 package com.liquoratdoor.ladlite.activity;
 
-import android.Manifest;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
@@ -11,14 +10,11 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
-import android.widget.GridView;
 import android.widget.ListView;
 
 import com.liquoratdoor.ladlite.adaptar.OrderAdapter;
 import com.liquoratdoor.ladlite.dto.OrderDTO;
-import com.liquoratdoor.ladlite.presenter.AuthPresenter;
 import com.liquoratdoor.ladlite.presenter.OrderPresenter;
-import com.liquoratdoor.ladlite.view.AuthView;
 import com.liquoratdoor.ladlite.view.OrderView;
 
 import java.util.List;

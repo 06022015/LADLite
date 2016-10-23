@@ -8,9 +8,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
@@ -19,14 +16,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.liquoratdoor.ladlite.AndroidApplication;
 import com.liquoratdoor.ladlite.auth.SessionManager;
-import com.liquoratdoor.ladlite.component.ApplicationComponent;
 import com.liquoratdoor.ladlite.interector.DefaultSubscriber;
-import com.liquoratdoor.ladlite.modules.ActivityModule;
 import com.liquoratdoor.ladlite.navigation.Navigator;
 import com.liquoratdoor.ladlite.service.RestApi;
 import com.liquoratdoor.ladlite.task.AsyncTaskHandler;
@@ -39,8 +32,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.inject.Inject;
-
 /**
  * Created by ashqures on 8/7/16.
  */
@@ -50,10 +41,8 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
     protected static final int MY_PERMISSIONS_REQUEST_READ_LOCATION = 200;
     protected static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 300;
 
-    @Inject
     Navigator navigator;
 
-    @Inject
     SessionManager sessionManager;
 
     private CommonTask mTask;
@@ -63,7 +52,8 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getApplicationComponent().inject(this);
+        this.navigator = new Navigator();
+        this.sessionManager = new SessionManager(this);
     }
 
     @Override
@@ -180,17 +170,6 @@ public class BaseActivity extends AppCompatActivity implements LoadDataView {
         fragmentTransaction.add(containerViewId, fragment);
         fragmentTransaction.commit();
     }
-
-    protected ApplicationComponent getApplicationComponent() {
-        System.out.println("Ashif:- "+getApplication().getClass().getName());
-        return ((AndroidApplication) getApplication()).getApplicationComponent();
-    }
-
-    protected ActivityModule getActivityModule() {
-        return new ActivityModule(this);
-    }
-
-
 
     public boolean checkSelfPermission(String permission, int resultCode) {
         if (ContextCompat.checkSelfPermission(context(), permission) != PackageManager.PERMISSION_GRANTED) {
