@@ -2,6 +2,7 @@ package com.liquoratdoor.ladlite.adaptar;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.liquoratdoor.ladlite.activity.R;
 import com.liquoratdoor.ladlite.dto.OrderDTO;
+import com.liquoratdoor.ladlite.dto.OrderState;
 import com.liquoratdoor.ladlite.util.CommonUtil;
 
 import java.util.Collection;
@@ -79,6 +81,9 @@ public class OrderAdapter extends ArrayAdapter<OrderDTO> {
         brief = brief.replace("_CNT",orderDTO.getOrderItemDTOs().size()+"");
         brief = brief.replace("_QNTY",orderDTO.getTotalQuantity()+"");
         holder.orderBrief.setText(brief);
+        if(orderDTO.getState().equals(OrderState.PAYMENT_SUCCESS)){
+            holder.orderBrief.setBackgroundColor(Color.GREEN);
+        }
         CommonUtil.handleDeliveryTime(holder.timeRemain, orderDTO.getOrderPlacedTime());
         row.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!--<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent">-->
     <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -173,34 +174,36 @@
                         android:layout_alignParentEnd="true" />
                 </RelativeLayout>
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/order_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="2.5dp"
+                android:paddingBottom="2.5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginTop="50dp"
+                android:weightSum="1">
+                <Button
+                    android:id="@+id/button_order_accept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/CustomButton"
+                    android:text="Accept"
+                    android:padding="5dp"/>
+                <Button
+                    android:id="@+id/button_order_reject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/CustomButton"
+                    android:text="Reject"
+                    android:layout_weight="1"
+                    android:padding="5dp"/>
+            </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-    <LinearLayout
-        android:id="@+id/order_action"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:orientation="horizontal"
-        android:paddingTop="2.5dp"
-        android:paddingBottom="2.5dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:weightSum="1"
-        android:layout_alignParentBottom="true">
-        <Button
-            android:id="@+id/button_order_accept"
-            android:layout_width="0dp"
-            android:layout_weight="1.00"
-            android:layout_height="wrap_content"
-            style="@style/CustomButton"
-            android:padding="5dp"/>
-        <Button
-            android:id="@+id/button_order_reject"
-            android:layout_width="187dp"
-            android:layout_weight="0.31"
-            android:layout_height="wrap_content"
-            style="@style/CustomButton"
-            android:padding="5dp"
-            android:layout_marginLeft="5dp" />
-    </LinearLayout>
-</RelativeLayout>
 
+    </ScrollView>
+<!--</RelativeLayout>-->
+<!--android:layout_alignParentBottom="true"-->

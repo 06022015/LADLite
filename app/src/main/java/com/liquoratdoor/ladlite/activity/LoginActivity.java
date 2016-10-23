@@ -21,6 +21,8 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.liquoratdoor.ladlite.dto.StatusDTO;
 import com.liquoratdoor.ladlite.dto.UserDTO;
 import com.liquoratdoor.ladlite.presenter.AuthPresenter;
@@ -241,10 +243,13 @@ public class LoginActivity extends BaseActivity implements LoaderManager.LoaderC
 
     private void attemptSignIn() {
         if (isValidateSignInForm()) {
+            FirebaseMessaging.getInstance().subscribeToTopic("Liquor");
+            String token = FirebaseInstanceId.getInstance().getToken();
             Map<String, String> formAttr = new HashMap<String, String>();
             formAttr.put(RestApi.USERNAME, j_username.getText().toString());
             formAttr.put(RestApi.PASSWORD, j_password.getText().toString());
-            formAttr.put(RestApi.DEVICE_ID, CommonUtil.getDeviceInfo(getApplicationContext()).get("deviceId"));
+            //formAttr.put(RestApi.DEVICE_ID, CommonUtil.getDeviceInfo(getApplicationContext()).get("deviceId"));
+            formAttr.put(RestApi.DEVICE_ID, token);
             this.presenter.attemptSignIn(formAttr);
         }
     }

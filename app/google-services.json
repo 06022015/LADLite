@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "417007014423",
+    "firebase_url": "https://liquoratdoor.firebaseio.com",
+    "project_id": "liquoratdoor",
+    "storage_bucket": "liquoratdoor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417007014423:android:641c5746d86600ff",
+        "android_client_info": {
+          "package_name": "com.liquoratdoor.ladlite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417007014423-4dtb60vhmabu3be08bfl4pngjrovor5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0ZlKzTJVaTfM5op7wZ_TuP098f0xokW0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,7 +15,7 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <permission android:name="your.package.name.permission.C2D_MESSAGE" android:protectionLevel="signature" />
     <uses-permission android:name="your.package.name.permission.C2D_MESSAGE" />-->
-
+<!--android:name="com.liquoratdoor.ladlite.AndroidApplication"-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -44,20 +44,20 @@
         </activity>
 
         <!-- [START firebase_service] -->
-        <!--<service
-            android:name=".push.FCMMessagingService">
+        <service
+            android:name="com.liquoratdoor.ladlite.push.FCMMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
-        </service>-->
+        </service>
         <!-- [END firebase_service] -->
         <!-- [START firebase_iid_service] -->
-        <!--<service
-            android:name=".push.FCMInstanceService">
+        <service
+            android:name="com.liquoratdoor.ladlite.push.FCMInstanceService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
-        </service>-->
+        </service>
         <!-- [END firebase_iid_service] -->
     </application>
 

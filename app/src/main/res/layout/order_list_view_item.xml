@@ -40,19 +40,17 @@
         android:id="@+id/delivery_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#040404"
-        android:textSize="18sp"
         android:text="#1726, 4th B Cross, 9th Main"
-        android:typeface="sans"
-        android:textIsSelectable="false"
-        android:textStyle="normal"
+        android:padding="5dp"
         android:layout_below="@+id/order_label"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/order_brief"
+        android:layout_toStartOf="@+id/order_brief" />
 
     <TextView
         android:id="@+id/order_brief"
-        android:layout_width="171dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#040404"
         android:textSize="12sp"
