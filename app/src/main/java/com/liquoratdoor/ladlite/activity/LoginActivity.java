@@ -173,6 +173,8 @@ public class LoginActivity extends BaseActivity implements LoaderManager.LoaderC
     @Override
     public void handleIdentifyUser(StatusDTO statusDTO) {
         //TODO: Need to implement the scenario where to navigate if identify user execution done.
+        TextView textView = (TextView)findViewById(R.id.action_message);
+        textView.setVisibility(View.VISIBLE);
     }
 
     private interface ProfileQuery {
