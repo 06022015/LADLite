@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.liquoratdoor.ladlite.listener.PhoneCallListener;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -71,9 +72,12 @@ public class CommonUtil {
         return address;
     }
 
-    public static void handleDeliveryTime(TextView textView,Date orderPLaceTime){
+    public static void handleDeliveryTime(TextView textView,Date orderPlaceTime){
         Date now = new Date();
-        DeliveryTimeCounter  counter = new DeliveryTimeCounter(textView, now.getTime()-orderPLaceTime.getTime());
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(orderPlaceTime);
+        calendar.add(Calendar.MINUTE, 45);
+        DeliveryTimeCounter  counter = new DeliveryTimeCounter(textView, calendar.getTimeInMillis()- now.getTime());
         counter.start();
     }
 

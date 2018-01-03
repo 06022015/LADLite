@@ -40,8 +40,8 @@ public class DeliveryTimeCounter extends CountDownTimer {
         if(hour<= 00 && min<10){
             this.view.setBackgroundColor(Color.parseColor("#FF0000"));
         }
-        if(millisUntilFinished<0)
-            this.cancel();
+        /*if(millisUntilFinished<0)
+            this.cancel();*/
     }
 
     @Override

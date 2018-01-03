@@ -43,6 +43,7 @@ public interface RestApi {
     final static String USERNAME = "username";
     final static String PASSWORD = "password";
     final static String DEVICE_ID = "deviceId";
+    final static String DEVICE_PUSH_TOKEN = "pushToken";
     final static String ORDER_SATE = "state";
     final static String ORDER_ID = "orderId";
 

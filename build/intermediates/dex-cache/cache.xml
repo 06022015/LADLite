@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_d319bc181805ce475f6e5ae8f32ec6611818ad74/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_45802e7bffe4882fc868617b8428b1020bf3995c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-7.0.1_585e4bf9fcfd530f83442955e213a63424131370/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="916a48f16d3e83c6cbc1c7277e78df4c2959a0c8">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0f9c02c66972ce9e1265a4dacfb2e329012950b4/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="005786793d72c6deacbbbfd38177ed58e1aa6653">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.0.0_4c62eae49c637ed1a7cfa775fe6779a03f1826b2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_45b09498c5aebcda973682316f2da2eefe05bade/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.4.1.1/c8d96f6fd2bcc179c312da33ee670a71188cc60d/httpclient-4.4.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c8d96f6fd2bcc179c312da33ee670a71188cc60d">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.4.1.1_36513cd2a85b54e4a0c421e8ec29df2eef52f62f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="cc178928721f3222b3b06bdfbd9497378ccb9792">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.0.0_4bc8d6f5d039506a389227328c55dfa414a7b405/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1941832901fc4e7a93300b53762e9f65d7650b99">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.0.0_a246d18a8ea106100701487880c50b8e4ccea8e0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="162b5a337c0a505ef49cfa71d965ccba3471efd3">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7721d0460b3beabe92dc248240fb01cda05e883e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.6/2586312cd2b8a511e4c6236736f5a039fc0f2273/rxjava-1.1.6.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.6_e2f27e1a26928fa66163d4a27896cc4e0fb94b28/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_e27a259f30858f5746fb8ae2b4ae715a92b07046/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.0.0_d74ae90ea4c3a2d7b1d702425835e6c47cf5e266/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="42df48c7305b08b14fa0e84561091b0c24d70d26">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.0.0_82fffb4c27235a32c98a05419f299440b29ea273/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_bf58acad487cc5ec9d9962665862f616ca905973/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_182c0a123a90b840b61bbff8f56eaeb51c555073/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.0.0_e9a4246cf63276ee43e1f9a59951cf81dd23e95e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_11f9892dd1006d737006062f912f08fa3d4341a2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.0.0_0ce8227c18db32acd52292a71321e8f43ba58eb6/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_f58302ee61382c503df735f8101661d7274b567f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6f65c144283b31b4b9a70e6e7aa4c4a1c897d4b8">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.0.0_2b713f716187ece3ec1eaf2a30fb9d743d135974/classes.dex" />
+    </item>
+    <item
+        jar="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/ashqures/project/home-pc/Hangover/source/android/LADLite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_f4ce6f322cb6e6bf01a4c2dac0163dcff66853a2/classes.dex" />
+    </item>
+
+</items>

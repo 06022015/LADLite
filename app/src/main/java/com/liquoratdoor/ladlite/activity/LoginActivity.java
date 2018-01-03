@@ -248,8 +248,8 @@ public class LoginActivity extends BaseActivity implements LoaderManager.LoaderC
             Map<String, String> formAttr = new HashMap<String, String>();
             formAttr.put(RestApi.USERNAME, j_username.getText().toString());
             formAttr.put(RestApi.PASSWORD, j_password.getText().toString());
-            //formAttr.put(RestApi.DEVICE_ID, CommonUtil.getDeviceInfo(getApplicationContext()).get("deviceId"));
-            formAttr.put(RestApi.DEVICE_ID, token);
+            formAttr.put(RestApi.DEVICE_ID, CommonUtil.getDeviceInfo(getApplicationContext()).get("deviceId"));
+            formAttr.put(RestApi.DEVICE_PUSH_TOKEN, token);
             this.presenter.attemptSignIn(formAttr);
         }
     }
